@@ -7,7 +7,17 @@ addBtn.addEventListener("click", () => {
   if (text === "") return;
 
   const li = document.createElement("li");
-  li.textContent = text;
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.addEventListener("change", () => {
+    li.classList.toggle("done", checkbox.checked);
+  });
+
+  const span = document.createElement("span");
+  span.textContent = text;
+
+  li.append(checkbox, span);
   list.appendChild(li);
 
   input.value = "";

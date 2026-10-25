@@ -53,8 +53,16 @@ h1 {
 }
 
 #todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 4px;
   font-size: 16px;
   color: #374151;
   border-bottom: 1px solid #e5e7eb;
+}
+
+#todo-list li.done span {
+  color: #9ca3af;
+  text-decoration: line-through;
 }
