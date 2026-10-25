@@ -17,7 +17,14 @@ addBtn.addEventListener("click", () => {
   const span = document.createElement("span");
   span.textContent = text;
 
-  li.append(checkbox, span);
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "删除";
+  delBtn.className = "del-btn";
+  delBtn.addEventListener("click", () => {
+    li.remove();
+  });
+
+  li.append(checkbox, span, delBtn);
   list.appendChild(li);
 
   input.value = "";

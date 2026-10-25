@@ -66,3 +66,17 @@ h1 {
   color: #9ca3af;
   text-decoration: line-through;
 }
+
+#todo-list li span {
+  flex: 1;
+}
+
+.del-btn {
+  padding: 4px 10px;
+  font-size: 14px;
+  color: #ef4444;
+  background: none;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  cursor: pointer;
+}
