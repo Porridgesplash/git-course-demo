@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f3f4f6;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+
+.app {
+  width: 420px;
+  margin-top: 80px;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  color: #1f2937;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+#add-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#todo-list {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#todo-list li {
+  padding: 12px 4px;
+  font-size: 16px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
