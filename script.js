@@ -4,6 +4,7 @@ const list = document.getElementById("todo-list");
 
 // 从浏览器里读出之前保存的待办
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
+let filter = "all"; // all：全部，active：未完成，done：已完成
 
 function save() {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -40,6 +41,15 @@ function render() {
     list.appendChild(li);
   });
 }
+
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filter = btn.dataset.filter;
+    document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
 
 addBtn.addEventListener("click", () => {
   const text = input.value.trim();
