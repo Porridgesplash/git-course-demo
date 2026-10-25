@@ -45,6 +45,8 @@ function render() {
 document.querySelectorAll(".filter-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     filter = btn.dataset.filter;
+    document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
     render();
   });
 });
