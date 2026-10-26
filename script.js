@@ -52,10 +52,18 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
   });
 });
 
-// 深色 / 浅色切换
+// 深色 / 浅色切换，选择保存在浏览器里
+function applyTheme(dark) {
+  document.body.classList.toggle("dark", dark);
+  themeBtn.textContent = dark ? "☀️" : "🌙";
+}
+
+applyTheme(localStorage.getItem("theme") === "dark");
+
 themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  const dark = !document.body.classList.contains("dark");
+  applyTheme(dark);
+  localStorage.setItem("theme", dark ? "dark" : "light");
 });
 
 addBtn.addEventListener("click", () => {
