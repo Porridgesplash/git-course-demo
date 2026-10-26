@@ -102,3 +102,19 @@ h1 {
   background: #2563eb;
   border-color: #2563eb;
 }
+
+/* 手机上：四周留出空白，标题字号小一点 */
+@media (max-width: 480px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .app {
+    margin-top: 24px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
