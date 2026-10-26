@@ -14,6 +14,10 @@ function save() {
 function render() {
   list.innerHTML = "";
   todos.forEach((todo, index) => {
+    // 按当前筛选跳过不该显示的待办
+    if (filter === "active" && todo.done) return;
+    if (filter === "done" && !todo.done) return;
+
     const li = document.createElement("li");
     if (todo.done) li.classList.add("done");
 
