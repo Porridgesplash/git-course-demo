@@ -1,6 +1,7 @@
 const input = document.getElementById("todo-input");
 const addBtn = document.getElementById("add-btn");
 const list = document.getElementById("todo-list");
+const themeBtn = document.getElementById("theme-btn");
 
 // 从浏览器里读出之前保存的待办
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
@@ -49,6 +50,20 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.classList.add("active");
     render();
   });
+});
+
+// 深色 / 浅色切换，选择保存在浏览器里
+function applyTheme(dark) {
+  document.body.classList.toggle("dark", dark);
+  themeBtn.textContent = dark ? "☀️" : "🌙";
+}
+
+applyTheme(localStorage.getItem("theme") === "dark");
+
+themeBtn.addEventListener("click", () => {
+  const dark = !document.body.classList.contains("dark");
+  applyTheme(dark);
+  localStorage.setItem("theme", dark ? "dark" : "light");
 });
 
 addBtn.addEventListener("click", () => {
