@@ -2,6 +2,7 @@ const input = document.getElementById("todo-input");
 const addBtn = document.getElementById("add-btn");
 const list = document.getElementById("todo-list");
 const themeBtn = document.getElementById("theme-btn");
+const count = document.getElementById("count");
 
 // 从浏览器里读出之前保存的待办
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
@@ -45,6 +46,10 @@ function render() {
     li.append(checkbox, span, delBtn);
     list.appendChild(li);
   });
+
+  // 还剩几件没完成
+  const left = todos.filter((t) => !t.done).length;
+  count.textContent = `还剩 ${left} 件没完成`;
 }
 
 document.querySelectorAll(".filter-btn").forEach((btn) => {
