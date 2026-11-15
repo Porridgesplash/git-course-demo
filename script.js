@@ -49,7 +49,13 @@ function render() {
 
   // 还剩几件没完成
   const left = todos.filter((t) => !t.done).length;
-  count.textContent = `还剩 ${left} 件没完成`;
+  if (todos.length === 0) {
+    count.textContent = "";
+  } else if (left === 0) {
+    count.textContent = "全部完成 🎉";
+  } else {
+    count.textContent = `还剩 ${left} 件没完成`;
+  }
 }
 
 document.querySelectorAll(".filter-btn").forEach((btn) => {
