@@ -121,6 +121,12 @@ h1 {
   cursor: pointer;
 }
 
+#count {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
 /* 深色模式 */
 body.dark {
   background: #111827;
